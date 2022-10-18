@@ -28,16 +28,22 @@ public class Vehiculo
     }
     public void Acelerar(int cantidad)
     {
-        Velocidad += cantidad;
-        if (Velocidad + cantidad > 120)
+        
+        if (cantidad > 0 && Velocidad + cantidad <= 120)
+        {
+            Velocidad += cantidad;
+        } else if (Velocidad + cantidad > 120)
         {
             Velocidad = 120;
         }
     }
     public void Frenar(int cantidad)
     {
-        Velocidad -= cantidad;
-        if (Velocidad - cantidad < 0)
+        
+        if (cantidad > 0 && Velocidad - cantidad >= 0)
+        {
+            Velocidad -= cantidad;
+        }else if ( Velocidad - cantidad < 0)
         {
             Velocidad = 0;
         }

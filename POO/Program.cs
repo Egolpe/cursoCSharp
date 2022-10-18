@@ -62,13 +62,23 @@ Console.WriteLine(vehiculo.Status);//true
 vehiculo.Stop();
 Console.WriteLine(vehiculo.Status);//false
 
-Console.WriteLine(vehiculo.Velocidad);
+//Acelera por primera vez
+Console.WriteLine(vehiculo.Velocidad);//0
 vehiculo.Acelerar(50);
-Console.WriteLine(vehiculo.Velocidad);
+Console.WriteLine(vehiculo.Velocidad);//50
+
+//Acelerar por segunda vez
 Console.WriteLine("introduce la cantida a acelerar: ");
 int cantidad = int.Parse(Console.ReadLine());
 vehiculo.Acelerar(cantidad);
 Console.WriteLine(vehiculo.Velocidad);
+
+//Frenar por primera vez
+vehiculo.Frenar(50);
+Console.WriteLine(vehiculo.Velocidad);
+
+
+//Frenar por segunda vez
 Console.WriteLine("introduce la cantida a frenar: ");
 int cantidad1 = int.Parse(Console.ReadLine());
 vehiculo.Frenar(cantidad1);
