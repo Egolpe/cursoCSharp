@@ -3,19 +3,20 @@ namespace POO;
 
 public class Vehiculo
 {
-    // Atributos
+    // Atributos (definen un estado)
     public string Manofacture;
     public string Model;
     public double CubicCentimeters;
     public bool Status; //true encendido, false apagado
+    public int Velocidad; //true encendido, false apagado
 
-    //Constructor vacio
+    //Constructor vacio (permite crear nuevos objetos tantos como quieras)
     public Vehiculo()
     {
 
     }
 
-    //Métodos
+    //Métodos (definen comportamiento)
     public void Start()
     {
         Status = true;
@@ -24,6 +25,22 @@ public class Vehiculo
     public void Stop()
     {
         Status = false;
+    }
+    public void Acelerar(int cantidad)
+    {
+        Velocidad += cantidad;
+        if (Velocidad + cantidad > 120)
+        {
+            Velocidad = 120;
+        }
+    }
+    public void Frenar(int cantidad)
+    {
+        Velocidad -= cantidad;
+        if (Velocidad - cantidad < 0)
+        {
+            Velocidad = 0;
+        }
     }
 }
 

@@ -61,3 +61,15 @@ vehiculo.Start();//invoca un método que realiza una acción
 Console.WriteLine(vehiculo.Status);//true
 vehiculo.Stop();
 Console.WriteLine(vehiculo.Status);//false
+
+Console.WriteLine(vehiculo.Velocidad);
+vehiculo.Acelerar(50);
+Console.WriteLine(vehiculo.Velocidad);
+Console.WriteLine("introduce la cantida a acelerar: ");
+int cantidad = int.Parse(Console.ReadLine());
+vehiculo.Acelerar(cantidad);
+Console.WriteLine(vehiculo.Velocidad);
+Console.WriteLine("introduce la cantida a frenar: ");
+int cantidad1 = int.Parse(Console.ReadLine());
+vehiculo.Frenar(cantidad1);
+Console.WriteLine(vehiculo.Velocidad);
