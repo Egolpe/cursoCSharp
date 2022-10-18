@@ -1,6 +1,8 @@
 ﻿using System;
 namespace POO;
 
+
+//Clase que representa empleados
 public class Employee
 {
     //1.atributos: información del empleado 
