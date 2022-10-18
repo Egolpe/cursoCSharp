@@ -1,4 +1,8 @@
 ﻿using POO;
+
+// Crear una variable
+string nombre = "Alan";
+
 // Crear objeto a partir de una clase
 
 Employee employee  = new Employee("684748494J", "empleado1", 30, 3000.0, false);
