@@ -37,7 +37,7 @@ public class Employee
         this.Name = Name;
         this.Salary = Salary;
     }
-    //constructor sobrecargado
+    //constructor vacio
     public Employee() { }
     
 }
