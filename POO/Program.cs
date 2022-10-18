@@ -56,8 +56,8 @@ Vehiculo vehiculo3 = new Vehiculo { Model = "focus" };
 Vehiculo Vehiculo4 = new Vehiculo { Model = "focus", CubicCentimeters = 1.2 };
 
 //Métodos de vehivulo
-Console.WriteLine(vehiculo.Status);
-vehiculo.Start();
-Console.WriteLine(vehiculo.Status);
+Console.WriteLine(vehiculo.Status);//False
+vehiculo.Start();//invoca un método que realiza una acción
+Console.WriteLine(vehiculo.Status);//true
 vehiculo.Stop();
-Console.WriteLine(vehiculo.Status);
+Console.WriteLine(vehiculo.Status);//false
