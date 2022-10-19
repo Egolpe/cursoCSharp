@@ -116,3 +116,22 @@ SmartPhone movil1 = new SmartPhone
     Ram = 16
 };
 Console.WriteLine(movil1);
+
+//Encapsulacion(getter setter)
+//get sirve para obtener/leer un atributo
+//set sirve para modificar el valor de un atributo
+
+Guest invitado = new Guest();
+invitado.Age = -20;
+Console.WriteLine(invitado.Age);
+//invitado.Dni="777888999Y";
+//invitado.Salary = 10.0;
+Console.WriteLine(invitado.Salary);
+invitado.Promote(200.0);
+Console.WriteLine(invitado.Salary);
+//invitado.Salary = 200.0;
+
+//Promote sobrecargado
+invitado.Promote();
+Console.WriteLine(invitado.Salary);
+//invitado.CalcSalaryPromotion();
