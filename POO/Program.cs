@@ -217,3 +217,36 @@ Console.WriteLine(alfaRomeo.Status + " " + alfaRomeo.NumPerson);
 
 alfaRomeo.Stop();
 Console.WriteLine(alfaRomeo.Status + " " + alfaRomeo.NumPerson);
+
+//porlimorfismo
+
+Customer client = new Customer {
+    Dni = "77788899Y",
+    Vehicle = electric1 //polimorfismo
+};
+client.Vehicle.Start();
+
+
+DoSomething(truck);
+DoSomething(moto);
+
+
+void DoSomething(RoadVehicle vehicle) //Polimorfismo
+{
+    vehicle.Start();
+    vehicle.Stop();
+}
+
+var vehicles = new List<RoadVehicle>
+{
+    new MotorCycle { Copilot = true},
+    new ElectricCar { BatteryCapacity = 30000}
+};
+
+Customer client2 = new Customer
+{
+    Dni = "44455566T",
+    PersonalVehicles = vehicles //Polimorfismo
+};
+
+Console.WriteLine("Num de vehiculos de client2: " + client2.PersonalVehicles.Count());

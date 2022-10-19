@@ -1,6 +1,7 @@
 ﻿using System;
 namespace POO;
-
+//Clase base
+//Tipo abstracto: no se pueden crear objetos
 public abstract class RoadVehicle
 {
 
