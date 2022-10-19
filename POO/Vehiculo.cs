@@ -24,6 +24,7 @@ public class Vehiculo
 
     public void Stop()
     {
+        Velocidad = 0;
         Status = false;
     }
     public void Acelerar(int cantidad)
@@ -35,6 +36,18 @@ public class Vehiculo
         } else if (Velocidad + cantidad > 120)
         {
             Velocidad = 120;
+        }
+    }
+    //Método sobrecargado: Acelerar que reciba una cantidad y un limite
+    public void Acelerar(int cantidad, int limit)
+    {
+        if (cantidad > 0 && Velocidad + cantidad <= limit)
+        {
+            Velocidad += cantidad;
+        }
+        else if (Velocidad + cantidad > limit)
+        {
+            Velocidad = limit;
         }
     }
     public void Frenar(int cantidad)
@@ -49,4 +62,5 @@ public class Vehiculo
         }
     }
 }
+
 

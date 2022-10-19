@@ -73,6 +73,17 @@ int cantidad = int.Parse(Console.ReadLine());
 vehiculo.Acelerar(cantidad);
 Console.WriteLine(vehiculo.Velocidad);
 
+//Acelerar con sobrecarga
+Vehiculo ferrari = new Vehiculo();
+ferrari.Start();
+ferrari.Acelerar(130);
+
+ferrari.Stop();
+ferrari.Start();
+ferrari.Acelerar(130, 200);
+
+vehiculo.Acelerar(50, 120);
+Console.WriteLine(vehiculo.Velocidad);
 //Frenar por primera vez
 vehiculo.Frenar(50);
 Console.WriteLine(vehiculo.Velocidad);
@@ -83,3 +94,25 @@ Console.WriteLine("introduce la cantida a frenar: ");
 int cantidad1 = int.Parse(Console.ReadLine());
 vehiculo.Frenar(cantidad1);
 Console.WriteLine(vehiculo.Velocidad);
+
+
+Persona persona = new Persona();
+persona.Saludar();
+persona.Saludar("Juan");
+
+
+//método toString
+SmartPhone movil = new SmartPhone {
+    Manofacture = "Samsung",
+    Cores = 4,
+    Ram = 8
+};
+Console.WriteLine(movil);
+
+SmartPhone movil1 = new SmartPhone
+{
+    Manofacture = "One Pluse",
+    Cores = 8,
+    Ram = 16
+};
+Console.WriteLine(movil1);
