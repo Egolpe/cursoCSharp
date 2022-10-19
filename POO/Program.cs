@@ -250,3 +250,16 @@ Customer client2 = new Customer
 };
 
 Console.WriteLine("Num de vehiculos de client2: " + client2.PersonalVehicles.Count());
+
+//Address - Country - Language
+
+Language idioma1 = new Language { Nombre = "castellano" };
+Language idioma2 = new Language { Nombre = "gallego" };
+
+Country spain = new Country
+{
+    Nombre = "España"
+};
+
+
+spain.Languages.Add(idioma1);
