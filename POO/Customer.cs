@@ -1,11 +1,16 @@
 ﻿using System;
-namespace POO
+namespace POO;
+
+public class Customer
 {
-    public class Customer
+
+    public string Dni;
+    public string Email;
+    public Address Address;
+    
+
+    public Customer()
     {
-        public Customer()
-        {
-        }
     }
 }
 

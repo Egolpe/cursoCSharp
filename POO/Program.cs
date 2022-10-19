@@ -135,3 +135,85 @@ Console.WriteLine(invitado.Salary);
 invitado.Promote();
 Console.WriteLine(invitado.Salary);
 //invitado.CalcSalaryPromotion();
+
+//Asociación entre clases
+
+Address address1 = new Address {
+    street = "calle falsa 123",
+    PostalCode = "44666",
+    City = "Madrid",
+    Country = "Spain"
+};
+Customer customer = new Customer {
+    Dni = "77788899Y",
+    Email = "cust1@company.com",
+    Address = address1
+};
+
+//calle del cliente
+Console.WriteLine(customer.Address.street);
+
+// Herencias:
+
+Car car = new Car();
+car.Manofacture = "Ford";//heredada
+car.NumRuedas   = 4;//heredada
+
+car.NumPuertas  = 3;//específica de car
+car.RuedaRepuesto = false;//específica de car
+car.NumPassengers = 3;//específica de car
+
+car.Start(); //heredado
+
+MotorCycle moto = new MotorCycle();
+moto.Manofacture = "Kawasaki"; //heredada
+moto.NumRuedas = 2;//heredada
+moto.Copilot = true; //especifica de MotorCycle
+moto.Naked = false;//especifica de MotorCycle
+
+
+Truck truck = new Truck();
+truck.Manofacture = "volvo";//heredada
+truck.NumRuedas = 12;//heredada
+truck.Trailer = true;
+truck.TrailerCapacity = 5;
+
+//Clase abstracta
+//se aplica normalmente a la clase base de una herencia
+//con el objetivo de que no se instancie
+//y obligar a que se instancie una de la clases hijas
+
+/* RoadVehicle veh1 = new RoadVehicle();
+truck.Manufacturer = "Honda"; 
+truck.NumRuedas = 4; */
+
+ElectricCar electric1 = new ElectricCar();
+electric1.Manofacture = "Alfa";//heredada de RoadVehicle
+electric1.NumRuedas = 4;//heredada de RoadVehicle
+
+electric1.NumPuertas = 5;//heredada de car
+electric1.RuedaRepuesto = true;//heredada de car
+electric1.NumPassengers = 5;//heredada de car
+
+electric1.BatteryCapacity = 50000;// específica
+
+CombustionCar combustion1 = new CombustionCar();
+combustion1.Manofacture = "Alfa";//heredada de RoadVehicle
+combustion1.NumRuedas = 4;//heredada de RoadVehicle
+
+combustion1.NumPuertas = 5;//heredada de car
+combustion1.RuedaRepuesto = true;//heredada de car
+combustion1.NumPassengers = 5;//heredada de car
+
+combustion1.TankCapacity = 120;// específica
+combustion1.Emission = 30.5;// específica
+
+//Override en herencia
+
+Car alfaRomeo = new Car();
+alfaRomeo.NumPerson = 3;
+alfaRomeo.Start();
+Console.WriteLine(alfaRomeo.Status + " " + alfaRomeo.NumPerson);
+
+alfaRomeo.Stop();
+Console.WriteLine(alfaRomeo.Status + " " + alfaRomeo.NumPerson);
