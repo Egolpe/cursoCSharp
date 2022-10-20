@@ -342,3 +342,19 @@ rodolfo.Saludar();
 
 
 Customer mike = new Customer { Saludo = saludo2 };
+
+
+// 1. Crear clase Computer
+// 2. Crear una interface IComputerRepository con operaciones CRUD sobre una lista de Computer
+// 3. Crear una implementación de la interface
+// 4. Utilizar los métodos desde Program.cs
+
+IComputerRepository computerRepo = new ComputerListRepositoryImpl();
+var computers = computerRepo.findAll();
+Console.WriteLine(computers.Count());
+var computer1 = computerRepo.findbyId(2);
+Console.WriteLine(computer1.Ram);
+
+
+var computers2 = computerRepo.FindAllByRam(8, 64);
+var computers3 = computerRepo.FindAllByRam(16, 128);
