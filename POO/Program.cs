@@ -326,3 +326,19 @@ foreach (Language idioma in client1.Address.country.Languages)
     Console.WriteLine(idioma.Nombre);
 }
 
+//Interfaces
+
+ISaludo saludo1 = new SaludoFormal();//Polimorfismo en interfaz
+Customer rodolfo = new Customer { Saludo = saludo1 };
+rodolfo.Saludo.Saludar();
+rodolfo.Saludo.Saludar("Enrique");
+rodolfo.Saludar();
+
+ISaludo saludo2 = new SaludoInformal();//Polimorfismo en interfaz
+rodolfo.Saludo = saludo2;
+rodolfo.Saludo.Saludar();
+rodolfo.Saludo.Saludar("Enrique");
+rodolfo.Saludar();
+
+
+Customer mike = new Customer { Saludo = saludo2 };
