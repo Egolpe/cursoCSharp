@@ -8,7 +8,7 @@ public class Customer
     public string Email;
     public Address Address;
     public RoadVehicle Vehicle;//Polimorfismo
-    public List<RoadVehicle> PersonalVehicles;//Polimorfismo
+    public List<RoadVehicle> PersonalVehicles = new List<RoadVehicle>();//Polimorfismo
 
     public Customer()
     {

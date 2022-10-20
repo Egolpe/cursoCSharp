@@ -142,7 +142,6 @@ Address address1 = new Address {
     street = "calle falsa 123",
     PostalCode = "44666",
     City = "Madrid",
-    Country = "Spain"
 };
 Customer customer = new Customer {
     Dni = "77788899Y",
@@ -253,13 +252,77 @@ Console.WriteLine("Num de vehiculos de client2: " + client2.PersonalVehicles.Cou
 
 //Address - Country - Language
 
-Language idioma1 = new Language { Nombre = "castellano" };
-Language idioma2 = new Language { Nombre = "gallego" };
+Language idioma1 = new Language { Nombre = "Castellano", Latin= true, Year = 1900 };
+Language idioma2 = new Language { Nombre = "Gallego", Latin= true, Year = 1300};
+Language idioma3 = new Language { Nombre = "Vasco", Latin = false, Year = 1600 };
 
-Country spain = new Country
+// 1. Crear varios objetos Language
+
+//opcion  1
+var languages = new List<Language> { idioma1, idioma2, idioma3 };
+
+//opcion 2
+/*var languages = new List<Kanguage>();
+Language.Add(idioma1);
+Language.Add(idioma2);
+Language.Add(idioma3);*/
+
+// 2. Crear un objeto Country con varios Language
+
+Country country1 = new Country
 {
-    Nombre = "España"
+    Capital = "Madrid",
+    Nombre = "España",
+    Pib = 1.2,
+    Población = 470000000,
+    TieneCosta = true,
+    UE = true,
+    Languages = languages
+};
+//Opción 2
+Country country2 = new Country
+{
+    Capital = "Alemania",
+    Nombre = "Berlin",
+    Pib = 1.2,
+    Población = 470000000,
+    TieneCosta = true,
+    UE = true,
+};
+//country2.Languages.AddRange(languages);
+country2.Languages.Add(idioma1);
+country2.Languages.Add(idioma2);
+country2.Languages.Add(idioma3);
+
+// 3. Crear objeto Address con un Country
+
+Address addressMadrid = new Address
+{
+    country = country1,
+    City = "Madrid",
+    PostalCode = "44477",
+    street = "calle"
+
 };
 
+// 4. Crear un objeto Customer con un Address
 
-spain.Languages.Add(idioma1);
+Customer client1 = new Customer
+{
+    Address = addressMadrid,
+    Dni = "77788899T",
+    Email = "cust1@sdsd.com",
+};
+
+// 5. A partir del objeto Customer imprimir qué lenguajes habla con un bucle for
+if(client1.Address.country.Languages == null)
+{
+    Console.WriteLine("Lista de idiomas sin inicializar");
+}
+
+Console.WriteLine("El cliente habla los siguientes idiomas: ");
+foreach (Language idioma in client1.Address.country.Languages)
+{
+    Console.WriteLine(idioma.Nombre);
+}
+
