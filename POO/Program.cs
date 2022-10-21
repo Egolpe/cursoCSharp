@@ -358,3 +358,131 @@ Console.WriteLine(computer1.Ram);
 
 var computers2 = computerRepo.FindAllByRam(8, 64);
 var computers3 = computerRepo.FindAllByRam(16, 128);
+
+var computer4 = computerRepo.FindAllByModel("Mackbook Pro");
+Console.WriteLine(computer4);
+
+
+//Comprobar que Save añade un nuevo ordenador:
+
+//Caso 1: añadir un ordenador que si se guarda
+
+//Crear un computer
+Computer computer5 = new Computer
+{
+    Id =4, Model= "DELL", Ram = 16
+};
+//llamar al metodo save
+int beforeSave = computerRepo.Count();
+bool saved = computerRepo.Save(computer5);
+int afterSave = computerRepo.Count();
+//comprobar si se guardó
+if (saved)
+{
+    Console.WriteLine("Se ha guarddado correctamente el ordenador 5");
+}else
+{
+    Console.WriteLine("no se ha podido guardar porque ya existe");
+}
+//Comprobar los que habia antes de añadir y los que hay después de añadir  y verificar que hay más
+if (afterSave - beforeSave == 1)
+{
+    Console.WriteLine("Efectivamente la lista de computers se incremento en 1.");
+}
+
+//===========================================================//
+
+
+//Caso 2: añadir un ordenador que no se guarda porque ya existe
+//Crear un ordenador con el mismo Id que otro ordenador que ya existe en la lista
+var comp1 = new Computer
+{
+    Id = 1,
+    Model = "Macbook Pro",
+    Ram = 16
+};
+
+//Intentar guarddar el ordenador en la lista de ordenadores
+beforeSave = computerRepo.Count();
+saved = computerRepo.Save(comp1);
+afterSave = computerRepo.Count();
+//comprobar que no se ha guardado nada
+if (!saved) Console.WriteLine("Efectivamente no se ha guardado comp1");
+
+if(afterSave == beforeSave)
+{
+    Console.WriteLine("No Se guardo");
+}
+
+//SaveAll =================================================
+Console.WriteLine("======SaveAll============ caso 1");
+//Caso 1: insertar 3 ordenadores completamente nuevos, el resultado devuelve 3
+Computer pcA = new Computer
+{
+    Id = 5,
+    Model = "firulais",
+    Ram = 2
+};
+Computer pcB = new Computer
+{
+    Id = 6,
+    Model = "firulais2",
+    Ram = 16
+};
+Computer pcC = new Computer
+{
+    Id = 7,
+    Model = "firulais3",
+    Ram = 32
+};
+var pcsToAdd = new List<Computer> { pcA, pcB, pcC };
+int savedNum =computerRepo.SaveAll(pcsToAdd);
+
+
+if(savedNum == 3)
+{
+    Console.WriteLine("Se han guardado tres ordenadores nuevos");
+}
+
+
+
+
+
+Console.WriteLine("======SaveAll============ caso 2");
+
+//Caso 2: insertar 4 ordenadores 2 nuevos y 2 que ya existen y debe devolver 2.
+//2 nuevos
+Computer pc1 = new Computer
+{
+    Id = 8,
+    Model = "firulais",
+    Ram = 2
+};
+Computer pc2 = new Computer
+{
+    Id = 9,
+    Model = "firulais2",
+    Ram = 16
+};
+
+//2 que ya existen
+Computer pc3 = new Computer
+{
+    Id = 7,
+    Model = "firulais3",
+    Ram = 32
+};
+Computer pc4 = new Computer
+{
+    Id = 5,
+    Model = "firulais",
+    Ram = 2
+};
+
+pcsToAdd = new List<Computer> { pc1, pc2, pc3, pc4 };
+savedNum = computerRepo.SaveAll(pcsToAdd);
+
+if (savedNum == 2)
+{
+    Console.WriteLine("Se han guardado 2 ordenadores nuevos");
+}

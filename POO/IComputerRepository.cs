@@ -16,8 +16,14 @@ public interface IComputerRepository
     //Recuperar por rango de memoria(min, max) Ram.
     List<Computer> FindAllByRam(int min, int max);
     //Buscar por Model
-
-    //Guardar
+    List<Computer> FindAllByModel(string model);
+    //Guardaruno
+    bool Save(Computer computer);
+    //guardar varios
+    int SaveAll(List<Computer> computersToAdd);
+    // recuperar el número de ordenadores, para saber cuantos ordenadores hay
+    int Count();
+    //imprimir todos los ordenadores de la lista
 
     //modificar
 
@@ -26,5 +32,6 @@ public interface IComputerRepository
     //Borrar todos
 
     //borrar por ids
+
 }
 

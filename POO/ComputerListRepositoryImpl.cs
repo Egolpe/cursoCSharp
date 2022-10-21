@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace POO;
 
@@ -65,6 +66,60 @@ public class ComputerListRepositoryImpl : IComputerRepository
             }
         }
         return computersByRam;
+    }
+
+    
+
+    public List<Computer> FindAllByModel(string model)
+    {
+        List<Computer> computersByModel = new List<Computer>();
+        foreach (Computer computer in computers)
+        {
+            if (computer.Model.ToLower().Equals(model.ToLower()))
+            {
+               computersByModel.Add(computer);
+            }
+        }
+        return computersByModel;
+    }
+
+    public bool Save(Computer computer)
+    {
+        Console.WriteLine(computer);
+        //comprobar si existe
+        bool exists = ExistById(computer.Id);
+        //si existe no lo añado a la lista
+        if (exists)
+        {
+            return false;
+        }
+        // si no existe lo añado y devuelvo true
+        computers.Add(computer);
+        return true;
+    }
+
+    public int Count()
+    {
+        //int NumPc = computers.Count();
+        //return NumPc;
+
+        int contador = 0;
+        foreach (Computer computer in computers)
+            contador++;
+        return contador;
+    }
+
+    public int SaveAll(List<Computer> computersToAdd)
+    {   //computersToAdd es la nueva lista de ordenadores a agregar
+        //computers es la lista de ordenadores que ya tenemos
+        //computers.AddRange(computersToAdd);
+        int contador = 0;
+        foreach (Computer computer in computersToAdd)
+        {
+            bool saved = Save(computer);
+            if (saved) contador++;
+        }
+        return contador;
     }
 }
 
