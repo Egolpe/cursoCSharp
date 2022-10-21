@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Text;
 
 namespace POO;
 
@@ -120,6 +121,25 @@ public class ComputerListRepositoryImpl : IComputerRepository
             if (saved) contador++;
         }
         return contador;
+    }
+
+    public void PrintAll()
+    {
+        //Opción 1
+        foreach (Computer computer in computers)
+        {
+            Console.WriteLine(computer);//Debe estar el metodo ToString en la clase computer
+        }
+
+
+        //OPcion 2
+        //Console.WriteLine(string.Join(",", computers));
+        //Opcion 3 
+        //StringBuilder sb = new StringBuilder();
+        //foreach (Computer computer in computers)
+        //    sb.Append(computer).Append(".");
+        //Console.WriteLine(sb);
+
     }
 }
 

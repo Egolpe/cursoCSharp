@@ -23,8 +23,8 @@ public interface IComputerRepository
     int SaveAll(List<Computer> computersToAdd);
     // recuperar el número de ordenadores, para saber cuantos ordenadores hay
     int Count();
-    //imprimir todos los ordenadores de la lista
-
+    //imprimir por consola todos los ordenadores de la lista que ya tenemos
+    void PrintAll();
     //modificar
 
     //Borrar

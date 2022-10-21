@@ -486,3 +486,9 @@ if (savedNum == 2)
 {
     Console.WriteLine("Se han guardado 2 ordenadores nuevos");
 }
+
+
+//=======================================================
+//==================PRINTALL=============================
+
+computerRepo.PrintAll();
