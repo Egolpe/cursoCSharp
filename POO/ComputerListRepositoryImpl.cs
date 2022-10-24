@@ -213,5 +213,32 @@ public class ComputerListRepositoryImpl : IComputerRepository
         }
         return (double)sum / Count();
     }
+
+    public int FindMaxRam()
+    { 
+            int maxRam = 0;
+            foreach (Computer computer in computers)
+            {
+                if(maxRam < computer.Ram)
+                {
+                    maxRam = computer.Ram;
+                }
+            }
+        return maxRam;
+    }
+
+    public int FindMinRam()
+    {
+
+        int minRam = 2;
+        foreach (Computer computer in computers)
+        {
+            if (minRam < computer.Ram)
+            {
+                computer.Ram = minRam;
+            }
+        }
+        return minRam;
+    }
 }
 

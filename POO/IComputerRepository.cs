@@ -39,7 +39,9 @@ public interface IComputerRepository
     bool DeleteAll();
     //calcular la RAM media de todos los ordenadores
     double CalculateAvgRam();
-    // TODO sacar la RAM máxima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
-    
+    //sacar la RAM máxima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
+    int FindMaxRam();
+    //sacar la RAM mínima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
+    int FindMinRam();
 }
 
