@@ -515,3 +515,18 @@ if (computer1FromList.Model.Equals("MackBook Pro modificado") && computer1FromLi
 {
     Console.WriteLine("Se han modificado los atributos del ordenador con Id 1");
 }
+
+
+Console.WriteLine("======DELETEBYID============");
+var beforeDelete = computerRepo.Count();
+bool isDeleted = computerRepo.DeleteById(2);
+var AfterDelete = computerRepo.Count();
+if (isDeleted)
+{
+    Console.WriteLine("Se ha borrado correctamente");
+}
+
+if (afterSave == beforeDelete -1)
+{
+    Console.WriteLine("Correcto se ha eliminado correctamente");
+}

@@ -165,5 +165,22 @@ public class ComputerListRepositoryImpl : IComputerRepository
         return false;  
 
     }
+
+    public bool DeleteById(int id)
+    {
+        if (!ExistById(id))
+        {
+            return false;
+        }
+        for (int i = 0; i < computers.Count; i++)
+        {
+            if (computers[i].Id == id)
+            {
+                computers.RemoveAt(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
