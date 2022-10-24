@@ -1,4 +1,5 @@
-﻿using POO;
+﻿using System.ComponentModel.DataAnnotations;
+using POO;
 
 // Crear una variable
 string nombre = "Alan";
@@ -348,8 +349,8 @@ Customer mike = new Customer { Saludo = saludo2 };
 // 2. Crear una interface IComputerRepository con operaciones CRUD sobre una lista de Computer
 // 3. Crear una implementación de la interface
 // 4. Utilizar los métodos desde Program.cs
-
-IComputerRepository computerRepo = new ComputerListRepositoryImpl();
+ComputerValidator validator = new ComputerValidator();
+IComputerRepository computerRepo = new ComputerListRepositoryImpl(validator);
 var computers = computerRepo.findAll();
 Console.WriteLine(computers.Count());
 var computer1 = computerRepo.findbyId(2);

@@ -8,9 +8,10 @@ public class ComputerListRepositoryImpl : IComputerRepository
 {
     //Atributos
     private List<Computer> computers;
+    private ComputerValidator Validator;
 
     //Constructor
-    public ComputerListRepositoryImpl()
+    public ComputerListRepositoryImpl(ComputerValidator validator)
     {
         computers = new List<Computer>
         {
@@ -19,6 +20,7 @@ public class ComputerListRepositoryImpl : IComputerRepository
             new Computer{ Id = 3, Model = "Assus A55a", Ram = 8}
 
         };
+        Validator = validator;
     }
 
    
@@ -95,8 +97,15 @@ public class ComputerListRepositoryImpl : IComputerRepository
             return false;
         }
         // si no existe lo añado y devuelvo true
+      
+        if(!Validator.Validate(computer))
+        {
+            return false;
+        }
         computers.Add(computer);
         return true;
+
+
     }
 
     public int Count()
