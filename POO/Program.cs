@@ -531,13 +531,13 @@ if (afterSave == beforeDelete -1)
     Console.WriteLine("Correcto se ha eliminado correctamente");
 }*/
 
-Console.WriteLine("======DELETEBYIDS============");
+/*Console.WriteLine("======DELETEBYIDS============");
 var ids = new List<int> { 1, 3, 5 };
 int deleteNum = computerRepo.DeleteByIds(ids);
 if(deleteNum == 3)
 {
     Console.WriteLine("Se han eliminado 3 ordenadores");
-}
+}*/
 
 Console.WriteLine("======DELETEALL============");
 /*beforeDelete = computerRepo.Count();
@@ -552,3 +552,9 @@ if (afterDelete == 0) Console.WriteLine("Se han eliminado todos los ordenadores"
 hasDeleteAll = computerRepo.DeleteAll();
 if(hasDeleteAll ) Console.WriteLine("Se han eliminado todos los ordenadores");
 */
+
+Console.WriteLine("======CALCURA LA MEDIA DE RAM============");
+computerRepo.PrintAll();
+double averageRam = computerRepo.CalculateAvgRam();
+Console.WriteLine(averageRam);
+Console.WriteLine($"La media de la RAM de los ordenadores es {averageRam}");

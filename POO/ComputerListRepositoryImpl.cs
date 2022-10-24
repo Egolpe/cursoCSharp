@@ -204,6 +204,14 @@ public class ComputerListRepositoryImpl : IComputerRepository
         return true;
     }
 
-   
+    public double CalculateAvgRam()
+    {
+        int sum = 0;
+        foreach (Computer computer in computers)
+        {
+            sum += computer.Ram;
+        }
+        return (double)sum / Count();
+    }
 }
 

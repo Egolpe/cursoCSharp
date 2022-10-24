@@ -35,11 +35,11 @@ public interface IComputerRepository
     int DeleteByIds(List<int> ids);
 
 
-    // TODO borrar todos
+    // borrar todos
     bool DeleteAll();
-    // TODO calcular la RAM media de todos los ordenadores
-
+    //calcular la RAM media de todos los ordenadores
+    double CalculateAvgRam();
     // TODO sacar la RAM máxima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
-
+    
 }
 
