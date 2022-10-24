@@ -25,13 +25,20 @@ public interface IComputerRepository
     int Count();
     //imprimir por consola todos los ordenadores de la lista que ya tenemos
     void PrintAll();
-    //modificar
+    //modificar un computer que ya está en la lista
+    bool update(Computer computer);
 
     //Borrar
 
     //Borrar todos
-
+  
     //borrar por ids
+
+    // TODO borrar todos
+
+    // TODO calcular la RAM media de todos los ordenadores
+
+    // TODO sacar la RAM máxima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
 
 }
 

@@ -141,5 +141,29 @@ public class ComputerListRepositoryImpl : IComputerRepository
         //Console.WriteLine(sb);
 
     }
+
+    public bool update(Computer computer)
+    {
+        //comprobar si existe
+        if (!ExistById(computer.Id))
+        {
+            return false;
+        }
+        //si existe devolver true
+        for(int i = 0; i < computers.Count; i++)
+        {
+            if(computers[i].Id == computer.Id)
+            {
+                //Actualizar atributos del computer de la lista
+                //del computer que llega como parametro
+                computers[i].Model = computer.Model;
+                computers[i].Ram = computer.Ram;
+                return true;// una vez modificado salimos del método
+            }
+
+        }
+        return false;  
+
+    }
 }
 

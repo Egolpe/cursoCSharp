@@ -492,3 +492,26 @@ if (savedNum == 2)
 //==================PRINTALL=============================
 
 computerRepo.PrintAll();
+
+
+//========================================================
+//====================UPDATE==============================
+
+Console.WriteLine("======UPDate============");
+//1.Tener un ordenador con los atributos modificados, menos el Id
+var computer1Modified = new Computer { Id = 1, Ram = 32, Model = "mackBook Pro modificado" };
+
+//invocar el metodo update
+var isModified = computerRepo.update(computer1Modified);
+//Comprobar que el objeto ordenador con ID 1 ha sido modificado
+if(isModified)
+{
+    Console.WriteLine("Se ha modificado el ordenador con el id1");
+}
+
+var computer1FromList = computerRepo.findbyId(1);
+
+if (computer1FromList.Model.Equals("MackBook Pro modificado") && computer1FromList.Ram == 32)
+{
+    Console.WriteLine("Se han modificado los atributos del ordenador con Id 1");
+}
