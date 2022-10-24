@@ -236,9 +236,12 @@ public class ComputerListRepositoryImpl : IComputerRepository
             if (minRam < computer.Ram)
             {
                 computer.Ram = minRam;
+
             }
         }
         return minRam;
     }
 }
+
+
 
