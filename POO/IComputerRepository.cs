@@ -11,7 +11,7 @@ public interface IComputerRepository
     //comprobar si existe por id
     bool ExistById(int id);
 
-    //Varios por ids
+    //recuperar por varios por ids
 
     //Recuperar por rango de memoria(min, max) Ram.
     List<Computer> FindAllByRam(int min, int max);
@@ -32,6 +32,7 @@ public interface IComputerRepository
     bool DeleteById(int id);
 
     //Borrar por ids
+    int DeleteByIds(List<int> ids);
 
 
     // TODO borrar todos

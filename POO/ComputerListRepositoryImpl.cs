@@ -183,6 +183,17 @@ public class ComputerListRepositoryImpl : IComputerRepository
         return false;
     }
 
+    public int DeleteByIds(List<int> ids)
+    {
+        int contador = 0;
+        foreach (int id in ids)
+        {
+            bool deleted = DeleteById(id);
+            if (deleted) contador++;
+        }
+        return contador;
+    }
+
     public bool DeleteAll()
     {
         //if (computers.Count == 0)
@@ -192,6 +203,7 @@ public class ComputerListRepositoryImpl : IComputerRepository
         computers.Clear();
         return true;
     }
-    
+
+   
 }
 
