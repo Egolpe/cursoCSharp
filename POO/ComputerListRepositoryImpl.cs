@@ -182,5 +182,16 @@ public class ComputerListRepositoryImpl : IComputerRepository
         }
         return false;
     }
+
+    public bool DeleteAll()
+    {
+        //if (computers.Count == 0)
+        //  return false;
+        if (!computers.Any())
+            return false;
+        computers.Clear();
+        return true;
+    }
+    
 }
 

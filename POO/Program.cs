@@ -520,7 +520,7 @@ if (computer1FromList.Model.Equals("MackBook Pro modificado") && computer1FromLi
 Console.WriteLine("======DELETEBYID============");
 var beforeDelete = computerRepo.Count();
 bool isDeleted = computerRepo.DeleteById(2);
-var AfterDelete = computerRepo.Count();
+var afterDelete = computerRepo.Count();
 if (isDeleted)
 {
     Console.WriteLine("Se ha borrado correctamente");
@@ -530,3 +530,16 @@ if (afterSave == beforeDelete -1)
 {
     Console.WriteLine("Correcto se ha eliminado correctamente");
 }
+
+Console.WriteLine("======DELETEALL============");
+beforeDelete = computerRepo.Count();
+bool hasDeleteAll = computerRepo.DeleteAll();
+afterDelete = computerRepo.Count();
+
+if(hasDeleteAll)
+{
+    Console.WriteLine("Se han eliminado todos los ordenadores");
+}
+if (afterDelete == 0) Console.WriteLine("Se han eliminado todos los ordenadores");
+hasDeleteAll = computerRepo.DeleteAll();
+if(hasDeleteAll ) Console.WriteLine("Se han eliminado todos los ordenadores");

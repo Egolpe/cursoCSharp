@@ -28,11 +28,14 @@ public interface IComputerRepository
     //modificar un computer que ya está en la lista
     bool update(Computer computer);
 
-    //borrar por ids
+    //borrar por id
     bool DeleteById(int id);
+
+    //Borrar por ids
+
+
     // TODO borrar todos
-
-
+    bool DeleteAll();
     // TODO calcular la RAM media de todos los ordenadores
 
     // TODO sacar la RAM máxima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
