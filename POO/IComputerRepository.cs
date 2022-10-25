@@ -43,5 +43,6 @@ public interface IComputerRepository
     int FindMaxRam();
     //sacar la RAM mínima de todos los ordenador, es decir, comprobar el que tiene más ram y devolver ese número
     int FindMinRam();
+
 }
 

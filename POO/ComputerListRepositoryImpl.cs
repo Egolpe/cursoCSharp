@@ -238,14 +238,12 @@ public class ComputerListRepositoryImpl : IComputerRepository
 
     public int FindMinRam()
     {
-
-        int minRam = 2;
+        int minRam = 0;
         foreach (Computer computer in computers)
         {
-            if (minRam < computer.Ram)
+            if(minRam == 0 || minRam >= computer.Ram)
             {
-                computer.Ram = minRam;
-
+                minRam = computer.Ram;
             }
         }
         return minRam;
