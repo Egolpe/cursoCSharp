@@ -19,9 +19,11 @@ public class AppDbContext : DbContext
     }
 
     //Configurar determinadas columnas a nivel global
+    /*
     protected override void ConfigureConventions(ModelConfigurationBuilder confBuilder)
     {
         confBuilder.Properties<string>().HaveMaxLength(100);
     }
+    */
 }
 
