@@ -7,8 +7,10 @@ Console.WriteLine("Hello, World!");
 //GuardarMultiple();
 //Required();
 //ValidacionesTitleMinLength();
-ValidacionesTitleMaxLength();
-
+//ValidacionesTitleMaxLength();
+//FindFirst();
+//Find();
+Count();
 
 //Métodos con ejemplos ========================================================
 void GuardarUno()
@@ -81,3 +83,31 @@ void ValidationRequired()
     context.SaveChanges();
     Console.WriteLine(book5);
 }
+
+void FindFirst()
+{
+    AppDbContext context = new AppDbContextFactory().CreateDbContext(null);
+    Console.WriteLine("===============Find First===============");
+
+    var book = context.Books.First();
+    Console.WriteLine(book);
+}
+
+void Find()
+{
+    AppDbContext context = new AppDbContextFactory().CreateDbContext(null);
+    Console.WriteLine("===============Find===============");
+
+    var book = context.Books.Find(5);
+    Console.WriteLine(book);
+}
+
+void Count()
+{
+    AppDbContext context = new AppDbContextFactory().CreateDbContext(null);
+    Console.WriteLine("===============Count===============");
+
+    var book = context.Books.Count();
+    Console.WriteLine(book);
+}
+
