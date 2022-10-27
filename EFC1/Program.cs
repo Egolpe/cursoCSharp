@@ -26,3 +26,13 @@ context.SaveChanges();
 
 Console.WriteLine(book3);
 Console.WriteLine(book4);
+
+Console.WriteLine("================Required =============");
+
+//Book book5 = new Book { Isbn = "238479457H" }; no deja que sea nulo (sin título)
+Book book5 = new Book { Isbn = "238479457H", Title = ""};
+context.Books.Add(book5);
+context.SaveChanges();
+Console.WriteLine(book5);
+
+
