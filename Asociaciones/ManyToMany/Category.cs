@@ -10,10 +10,15 @@ public class Category
     public string Color;
 
     //Asociaciones
-
+    public List<Film> Films = new List<Film>();
 
     public Category()
     {
+    }
+
+    public override string ToString()
+    {
+        return $"Category: {Id}, Name: {Name}, Color: {Color}, Films: {Films.Count}";
     }
 }
 

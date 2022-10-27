@@ -1,11 +1,32 @@
 ﻿using System;
-namespace Asociaciones.OneToOne
+using System.Reflection;
+using System.Runtime.Intrinsics.Arm;
+
+namespace Asociaciones.OneToOne;
+
+public class Address
 {
-    public class Address
+
+    //Atributos
+    public long Id;
+    public string Street;
+    public string City;
+
+    //asociaciones
+    public Customer Customer;//bidireccional opcional
+
+    //constructores
+    public Address()
     {
-        public Address()
-        {
-        }
+    }
+
+    //métodos
+
+
+    //ToString
+    public override string ToString()
+    {
+        return $"Address: {Id}, street: {Street}, city: {City}";
     }
 }
 
