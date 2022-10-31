@@ -1,5 +1,5 @@
 ﻿using System;
-namespace EFC1.Models;
+namespace EFCAsociaciones.Models;
 
 [Table("authors")]
 public class Author
@@ -18,6 +18,11 @@ public class Author
 
     [Column("birth_date")]
     public DateTime BirthDate { get; set; }
+
+    //Asociacion One to One
+    //Asociaciones
+    public Address Address { get; set; }
+    public int AddressId { get; set; } //opcional
 
     //Constructor
     public Author()

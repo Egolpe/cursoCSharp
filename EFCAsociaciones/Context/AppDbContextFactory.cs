@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace EFC1.Context;
+namespace EFCAsociaciones.Context;
 
 public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace EFC1.Reppositories;
+namespace EFCAsociaciones.Reppositories;
 
 public interface IAuthorRepository
 {

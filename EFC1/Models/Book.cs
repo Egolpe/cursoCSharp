@@ -2,7 +2,7 @@
 
 
 namespace EFC1.Models;
-
+[Table("books")]
 public class Book
 {
     //Atributos
