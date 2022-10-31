@@ -76,6 +76,7 @@ public class AuthorDbRepository : IAuthorRepository
             return false;
         }
         Context.Authors.Remove(author);
+        Context.SaveChanges();
         return true;
     }
 }

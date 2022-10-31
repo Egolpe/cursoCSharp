@@ -48,6 +48,24 @@ Author authorToCreate = new Author {
 var authorCreated = authorRepo.Create(authorToCreate);
 Console.WriteLine(authorCreated);
 
+Console.WriteLine("=================== Update =================");
+
+author1 = authorRepo.FindById(1);
+author1.Email = "author1edited@smail.com";
+author1.FullName = "author1 editado";
+author1.Salary = 5000;
+author1.BirthDate = new DateTime(1978, 1, 1);//no se debe de cambiar en base de datos
+
+var authorUpdated = authorRepo.Update(author1);
+
+Console.WriteLine(authorUpdated);
+
+Console.WriteLine("=================== Remove =================");
+
+
+bool removed = authorRepo.Remove(2);
+Console.WriteLine(removed);
+
 
 // MÉTODOS CON EJEMPLOS =========================================
 // Metodo1_Add();
