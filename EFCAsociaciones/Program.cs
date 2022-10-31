@@ -20,7 +20,15 @@ Console.WriteLine("=====================One to Many y Many to One=============")
 
 // autor -> books (One to many)
 
+
 //books -> author (Many To One)
+Book book1 = new Book { Title = "book1", Description = "fdfsfafv", Isbn = "dfafaf", ReleaseYear = 1999, Author = author1 };
+Book book2 = new Book { Title = "book2", Description = "fdfsfafv", Isbn = "dfafaf", ReleaseYear = 2001, Author = author1 };
+
+context.Books.Add(book1);
+context.Books.Add(book2);
+context.SaveChanges();
+
 
 Console.WriteLine("=====================Many to Many=============");
 
