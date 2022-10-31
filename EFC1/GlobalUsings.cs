@@ -10,3 +10,4 @@ global using System.ComponentModel.DataAnnotations;
 global using EFC1;
 global using EFC1.Context;
 global using EFC1.Models;
+global using EFC1.Reppositories;

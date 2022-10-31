@@ -8,6 +8,7 @@ public class AppDbContext : DbContext
    
     //Atributos
     public DbSet<Book>Books { get; set; } //Agregar un DbSet por cada clase modelo que tengamos
+    public DbSet<Author> Authors { get; set; } //Agregar un DbSet por cada clase modelo que tengamos
 
     //Constructores
     public AppDbContext()
