@@ -124,12 +124,17 @@ namespace EFCAsociaciones.Context.Migrations
             modelBuilder.Entity("EFCAsociaciones.Models.Book", b =>
                 {
                     b.HasOne("EFCAsociaciones.Models.Author", "Author")
-                        .WithMany()
+                        .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("EFCAsociaciones.Models.Author", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

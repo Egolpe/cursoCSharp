@@ -19,10 +19,13 @@ public class Author
     [Column("birth_date")]
     public DateTime BirthDate { get; set; }
 
-    //Asociacion One to One
+    //Asociacion One to One con address
     //Asociaciones
     public Address Address { get; set; }
     public int AddressId { get; set; } //opcional
+
+    //Asociacion one to many con books
+    public ICollection<Book> Books { get; set; }
 
     //Constructor
     public Author()

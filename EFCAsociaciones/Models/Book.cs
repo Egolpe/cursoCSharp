@@ -17,7 +17,7 @@ public class Book
 
     public string Description { get; set; }
 
-    //Asociacion meny books to one author
+    //Asociacion many books to one author
     //Asociaciones
     public Author Author { get; set; }
     public int AuthorId { get;  set; }
