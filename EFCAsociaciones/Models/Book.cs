@@ -21,10 +21,16 @@ public class Book
     //Asociaciones
     public Author Author { get; set; }
     public int AuthorId { get;  set; }
+
+
+    //Asociaciones Many to many con category
+    public IList<Category> Categories { get; set; }
     //Constructores
     public Book()
     {
     }
+
+
 
     //métodos
 
