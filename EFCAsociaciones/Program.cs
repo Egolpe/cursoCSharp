@@ -9,7 +9,7 @@ IBookRepository bookRepo = new BookDbRepository(context);
 IAddressRepository addressRepo = new AddressDbRepository(context);
 ICategoryRepository categoryRepo = new CategoryDbRepository(context);
 
-
+/*
 //3. Crear objetos Model: asociar - Desasociar
 //Address
 var address1 = new Address { Street = "calle1", City = "madrid" };
@@ -65,22 +65,50 @@ bookRepo.Create(book1);
 bookRepo.Create(book2);
 bookRepo.Create(book3);
 bookRepo.Create(book4);
+*/
 
-//Actualizar
-
+Console.WriteLine("======================ACTUALIZAR=======================");
+//Actualizar: siempre que se sactualice se tiene que usar el Id
+/*
+Console.WriteLine("======================Book y Author =======================");
 
 var book1ToUpdate = new Book { Id = 1, Title = "modificado", Isbn = "modificado", ReleaseYear = 1999, AuthorId = 2 };
 bookRepo.Update(book1ToUpdate);
 //DEsasociar relacion de book con author
 book1ToUpdate.AuthorId = null;
 bookRepo.Update(book1ToUpdate);
-/*
-//Desasociar/ actualizar una relacion de books con categories
-book1ToUpdate = bookRepo.FindById(1); // busca con categorias
-
-book1ToUpdate.Categories.Clear();
-bookRepo.Update(book1ToUpdate);
 */
+
+Console.WriteLine("======================Book y Categories =======================");
+
+//Añadir una nueva categoria: relacion de books con categories
+var book1WithCats = bookRepo.FindByIdWhitInclude(1);
+Category cat5 = new Category { Name = "cat5", MinAge = 25 };
+foreach(var cat in book1WithCats.Categories)
+{
+    Console.WriteLine(cat.Name);
+    //book1WithCats.Categories.Remove(cat);
+}
+//book1WithCats.Categories.RemoveAt(0);
+book1WithCats.Categories.Add(cat5);
+bookRepo.Update(book1WithCats);
+
+//Añadir una existente a Book
+
+var cat1fromDb = categoryRepo.FindById(1);
+book1WithCats.Categories.Add(cat1fromDb);
+bookRepo.Update(book1WithCats);
+
+
+//Quitar una categoria existente del libro
+/*
+book1WithCats.Categories.RemoveAt(0);
+bookRepo.Update(book1WithCats);
+*/
+
+//Quitar todas las categorias
+book1WithCats.Categories.Clear();
+bookRepo.Update(book1WithCats);
 
 //Borrar
 
