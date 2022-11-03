@@ -114,7 +114,7 @@ bookRepo.Update(book1WithCats);
 Console.WriteLine("======================Borrar =======================");
 
 //1.Buscar los libros del autor1
-List<Book> books = bookRepo.FindByAuthorId(1);
+List<Book> books = bookRepo.FindByAuthorId(3);
 
 //2. Desasocias esos libros
 foreach (Book book in books)
@@ -123,14 +123,14 @@ foreach (Book book in books)
     bookRepo.Update(book);
 }
 // 3. Borrar el address asociado al autor
-var authorFromDb = authorRepo.FindById(2);
+var authorFromDb = authorRepo.FindById(3);
 if(authorFromDb.AddressId != null)
 {
     addressRepo.Remove((int)authorFromDb.AddressId);
 }
 //4.Borra el autor 1
 
-authorRepo.RemoveById(2);
+authorRepo.RemoveById(3);
 
 
 
