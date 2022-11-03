@@ -24,6 +24,6 @@ public interface IAuthorRepository
     Author Update(Author author);
 
     //eliminar autor por id
-    bool Remove(int id);
+    bool RemoveById(int id);
 }
 

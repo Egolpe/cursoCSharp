@@ -12,6 +12,9 @@ public interface IBookRepository
     //buscar por Title que contenga el texto
     List<Book> FindByTitleContains(string title);
 
+    //Buscar por autor
+    List<Book> FindByAuthorId(int id);
+
     //Buscar todos
     List<Book> FindAll();
 

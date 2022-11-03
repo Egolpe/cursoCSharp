@@ -45,6 +45,16 @@ public class CategoryDbRepository : ICategoryRepository
         return true;
     }
 
-   
+    public bool RemoveById(int id)
+    {
+        Category category = FindById(id);
+        if (category == null)
+        {
+            return false;
+        }
+        Context.Categories.Remove(category);
+        Context.SaveChanges();
+        return true;
+    }
 }
 

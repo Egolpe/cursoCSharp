@@ -68,7 +68,7 @@ public class AuthorDbRepository : IAuthorRepository
 
     }
 
-    public bool Remove(int id)
+    public bool RemoveById(int id)
     {
         Author author = FindById(id);
         if(author == null)

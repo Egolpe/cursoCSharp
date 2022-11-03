@@ -34,7 +34,7 @@ public class AddressDbRepository : IAddressRepository
         return Context.Addresses.Find(id);
     }
 
-    public bool Remove(int id)
+    public bool RemoveById(int id)
     {
         Address address = FindById(id);
         if (address == null)
@@ -42,6 +42,18 @@ public class AddressDbRepository : IAddressRepository
             return false;
         }
         Context.Addresses.Remove(address);// un libro puede tener author y categories
+        Context.SaveChanges();
+        return true;
+    }
+
+    public bool Remove(int id)
+    {
+        Address address = FindById(id);
+        if (address == null)
+        {
+            return false;
+        }
+        Context.Addresses.Remove(address);
         Context.SaveChanges();
         return true;
     }

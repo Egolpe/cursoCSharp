@@ -88,6 +88,13 @@ public class BookDbRepository : IBookRepository
         Context.SaveChanges();
         return FindById(book.Id);
     }
+
+    public List<Book> FindByAuthorId(int id)
+    {
+        return Context.Books
+        .Where(book => book.AuthorId ==id)
+        .ToList();
+    }
 }
 
 

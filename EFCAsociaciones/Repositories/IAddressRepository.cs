@@ -9,6 +9,6 @@ public interface ICategoryRepository
     List<Category> FindAll();
     Category Create(Category category);
     
-    bool Remove(int id);
+    bool RemoveById(int id);
 }
 
