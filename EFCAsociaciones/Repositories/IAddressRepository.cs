@@ -1,25 +1,14 @@
 ﻿
 namespace EFCAsociaciones.Repositories;
 
-public interface IBookRepository
+public interface ICategoryRepository
 {
-    //buscar por id
-    Book FindById(int id);
+    
+    Category FindById(int id);
 
-    // buscar por id incluyendo asociaciones: Author , Category
-    Book FindByIdWhitInclude(int id);
-
-    //buscar por Title que contenga el texto
-    List<Book> FindByTitleContains(string title);
-
-    //Buscar todos
-    List<Book> FindAll();
-
-    //guardar
-    Book Create(Book book);
-    //actualizar  restringiendo campos
-    Book Update(Book book);
-    //borrar por id
+    List<Category> FindAll();
+    Category Create(Category category);
+    
     bool Remove(int id);
 }
 

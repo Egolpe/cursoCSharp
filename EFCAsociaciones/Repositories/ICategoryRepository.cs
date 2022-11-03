@@ -11,8 +11,7 @@ public interface IAddressRepository
 
     //guardar
     Address Create(Address address);
-    //actualizar  restringiendo campos
-    Address Update(Address address);
+   
     //borrar por id
     bool Remove(int id);
 }

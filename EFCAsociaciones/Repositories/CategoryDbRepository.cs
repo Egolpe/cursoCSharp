@@ -18,12 +18,6 @@ public class CategoryDbRepository : ICategoryRepository
 
     public Category Create(Category category)
     {
-        if (category.Id > 0)
-        {
-            return Update(category);
-        }
-
-
         Context.Categories.Add(category);// un libro puede tener author y categories
         Context.SaveChanges();
         return category;

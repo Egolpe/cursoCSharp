@@ -63,7 +63,7 @@ namespace EFCAsociaciones.Context.Migrations
                         .HasColumnName("id")
                         .HasColumnOrder(0);
 
-                    b.Property<int>("AddressId")
+                    b.Property<int?>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDate")
@@ -100,7 +100,7 @@ namespace EFCAsociaciones.Context.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -165,9 +165,7 @@ namespace EFCAsociaciones.Context.Migrations
                 {
                     b.HasOne("EFCAsociaciones.Models.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddressId");
 
                     b.Navigation("Address");
                 });
@@ -176,9 +174,7 @@ namespace EFCAsociaciones.Context.Migrations
                 {
                     b.HasOne("EFCAsociaciones.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.Navigation("Author");
                 });

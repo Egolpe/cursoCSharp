@@ -19,12 +19,6 @@ public class AddressDbRepository : IAddressRepository
 
     public Address Create(Address address)
     {
-        if (address.Id > 0)
-        {
-            return address;
-        }
-
-
         Context.Addresses.Add(address);// un libro puede tener author y categories
         Context.SaveChanges();
         return address;

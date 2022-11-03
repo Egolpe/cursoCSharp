@@ -20,7 +20,7 @@ public class Book
     //Asociacion many books to one author
     //Asociaciones
     public Author Author { get; set; }
-    public int AuthorId { get;  set; }
+    public int? AuthorId { get;  set; }// autor opcional
 
 
     //Asociaciones Many to many con category
