@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFC1", "EFC1\EFC1.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCAsociaciones", "EFCAsociaciones\EFCAsociaciones.csproj", "{1D7E5C90-86AE-4448-9547-C790FA360A69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET1", "ASPNET1\ASPNET1.csproj", "{328B161D-17C3-4A96-9779-C39B9C867ECA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1D7E5C90-86AE-4448-9547-C790FA360A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D7E5C90-86AE-4448-9547-C790FA360A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D7E5C90-86AE-4448-9547-C790FA360A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328B161D-17C3-4A96-9779-C39B9C867ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328B161D-17C3-4A96-9779-C39B9C867ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328B161D-17C3-4A96-9779-C39B9C867ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328B161D-17C3-4A96-9779-C39B9C867ECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ namespace ASPNET1.Controllers;
 
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/saludos")]
 public class HelloController
 {
 
