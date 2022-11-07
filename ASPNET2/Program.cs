@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using ASPNET2.Reppositories;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -12,8 +14,11 @@ var url = "server=localhost;port=3306;user=root;password=Eg44640766;database=gru
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseMySql(url, ServerVersion.AutoDetect(url))
 );
-
-
+// AÑADIR LOS REPOSITORIOS
+builder.Services.AddScoped<IAddressRepository, AddressDbRepository>();
+builder.Services.AddScoped<IBookRepository, BookDbRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryDbRepository>();
+builder.Services.AddScoped<IAuthorRepository, AuthorDbRepository>();
 
 var app = builder.Build();
 

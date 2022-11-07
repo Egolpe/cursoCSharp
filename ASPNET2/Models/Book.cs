@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace EFCAsociaciones.Models;
+namespace ASPNET2.Models;
 
 public class Book
 {

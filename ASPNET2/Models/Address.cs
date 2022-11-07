@@ -1,5 +1,5 @@
 ﻿
-namespace EFCAsociaciones.Models;
+namespace ASPNET2.Models;
 [Table("addresses")]
 public class Address
 {

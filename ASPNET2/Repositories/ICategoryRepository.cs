@@ -1,5 +1,5 @@
 ﻿
-namespace EFCAsociaciones.Repositories;
+namespace ASPNET2.Repositories;
 
 public interface IAddressRepository
 {

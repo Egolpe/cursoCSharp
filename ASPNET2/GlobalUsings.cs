@@ -5,8 +5,9 @@ global using Microsoft.EntityFrameworkCore.Metadata;
 global using System.ComponentModel.DataAnnotations.Schema;
 
 global using System.ComponentModel.DataAnnotations;
+global using Microsoft.AspNetCore.Mvc;
 
 global using ASPNET2;
 global using ASPNET2.Db;
-global using EFC1.Models;
-global using EFC1.Reppositories;
+global using ASPNET2.Models;
+global using ASPNET2.Repositories;

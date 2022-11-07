@@ -1,5 +1,5 @@
 ﻿using System;
-namespace EFCAsociaciones.Models;
+namespace ASPNET2.Models;
 [Table("categories")]
 public class Category
 {

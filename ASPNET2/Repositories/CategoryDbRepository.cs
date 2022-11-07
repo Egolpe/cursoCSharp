@@ -1,7 +1,7 @@
 ﻿
-using EFCAsociaciones.Models;
+using ASPNET2.Models;
 
-namespace EFCAsociaciones.Repositories;
+namespace ASPNET2.Repositories;
 
 public class CategoryDbRepository : ICategoryRepository
 {

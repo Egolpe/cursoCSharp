@@ -1,7 +1,6 @@
 ﻿
-using EFCAsociaciones.Models;
 
-namespace EFCAsociaciones.Repositories;
+namespace ASPNET2.Repositories;
 
 public class AddressDbRepository : IAddressRepository
 {
