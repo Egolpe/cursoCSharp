@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EFC1.Context;
+namespace ASPNET2.Db;
 
 public class AppDbContext : DbContext 
 {
