@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.Json.Serialization;
+
 namespace ASPNET2.Models;
 
 [Table("authors")]
@@ -25,6 +27,7 @@ public class Author
     public int? AddressId { get; set; } //opcional
 
     //Asociacion one to many con books
+    [JsonIgnore]
     public ICollection<Book> Books { get; set; }
 
     //Constructor

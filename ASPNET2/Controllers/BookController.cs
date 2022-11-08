@@ -27,6 +27,12 @@ public class BookController
         return BookRepo.FindById(id);
     }
 
+    [HttpGet("include/{id}")]
+    public Book FindByIdWithInclude(int id)
+    {
+        return BookRepo.FindByIdWhitInclude(id);
+    }
+
     [HttpGet("title/{title}")]
     public List<Book> FindByTitleContains(string title)
     {
@@ -39,5 +45,19 @@ public class BookController
         var bookDb =  BookRepo.Create(book);
         return bookDb;
     }
+
+    [HttpPut]
+    public Book Update(Book book)
+    {
+        return BookRepo.Update(book);
+    }
+
+    [HttpDelete("{id}")]
+    public void DeleteById(int id)
+    {
+        BookRepo.Remove(id);
+    }
+
+
 }
 
