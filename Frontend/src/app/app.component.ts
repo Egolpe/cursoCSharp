@@ -22,7 +22,7 @@ export class AppComponent {
     {id: 3, title: "React", author: "facebook", price: 90 },
   ];
   
-  columnNames: string[] = ['Identificador', 'Título', 'Autor', 'Precio']; 
+  columnNames: string[] = ['Identificador', 'Título', 'Autor', 'Precio', 'Acciones']; 
 
 
 
