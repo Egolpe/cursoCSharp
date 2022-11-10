@@ -45,6 +45,22 @@ public class AddressDbRepository : IAddressRepository
         return true;
     }
 
+    public Address Update(Address address)
+    {
+        if (address.Id == 0)
+        {
+            return Create(address);
+        }
+        //Guardar solo aquellos atributos que interesen 
+        Context.Addresses.Attach(address);
+
+        Context.Entry(address).Property(b => b.Street).IsModified = true;
+       
+
+        Context.SaveChanges();
+        return FindById(address.Id);
+    }
+
     public bool Remove(int id)
     {
         Address address = FindById(id);

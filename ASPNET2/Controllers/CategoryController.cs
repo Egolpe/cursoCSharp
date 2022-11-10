@@ -10,5 +10,14 @@ public class CategoryController
     {
         CategoryRepo = categoryRepository;
     }
+
+    // FindByMinAge - Dani
+    [HttpGet("/min-age/{age}")]
+    public List<Category> FindByMinAge(int age)
+    {
+        return CategoryRepo.FindByMinAge(age);
+    }
+
+
 }
 

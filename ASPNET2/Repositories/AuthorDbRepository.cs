@@ -5,10 +5,12 @@ public class AuthorDbRepository : IAuthorRepository
 {
     //Atributos
     private AppDbContext Context;
+    private IBookRepository BookRepo;
     //constructores
-    public AuthorDbRepository(AppDbContext context)
+    public AuthorDbRepository(AppDbContext context, IBookRepository BookRepository)
     {
         Context = context;
+        BookRepo = BookRepository;
     }
 
 
@@ -61,6 +63,8 @@ public class AuthorDbRepository : IAuthorRepository
         authorFromDb.Email = author.Email;
         authorFromDb.FullName = author.FullName;
         authorFromDb.Salary = author.Salary;
+        authorFromDb.AddressId = author.AddressId;
+
         Context.Authors.Update(author);
         Context.SaveChanges();
         return authorFromDb;
@@ -75,9 +79,30 @@ public class AuthorDbRepository : IAuthorRepository
         {
             return false;
         }
+
+        List<Book> books = BookRepo.FindByAuthorId(id);
+        foreach (Book book in books)
+        {
+            book.AuthorId = null; // desasociar
+            BookRepo.Update(book); // actualizar en base de datos
+        }
+
+
         Context.Authors.Remove(author);
         Context.SaveChanges();
         return true;
+    }
+
+    private void FindByAuthorId(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Author> FindAllBySalaryRange(decimal minSalary, decimal maxSalary)
+    {
+        return Context.Authors.Where(author =>
+            author.Salary >= minSalary && author.Salary <= maxSalary
+        ).ToList();
     }
 }
 

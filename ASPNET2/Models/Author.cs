@@ -23,12 +23,12 @@ public class Author
 
     //Asociacion One to One con address
     //Asociaciones
-    public Address Address { get; set; }
+    public Address? Address { get; set; }
     public int? AddressId { get; set; } //opcional
 
     //Asociacion one to many con books
     [JsonIgnore]
-    public ICollection<Book> Books { get; set; }
+    public ICollection<Book>? Books { get; set; }
 
     //Constructor
     public Author()

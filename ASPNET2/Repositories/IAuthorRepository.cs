@@ -15,6 +15,8 @@ public interface IAuthorRepository
     //Filtro autores cuyo salario mayor que
     List<Author> FindAllBySalaryGreaterThanEquals(decimal salary);
 
+    List<Author> FindAllBySalaryRange(decimal minSalary, decimal maxSalary);
+
     // operaciones CRUD
 
     //Guardar nuevo autor

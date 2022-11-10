@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="OneToOne\" />
+    <None Remove="ManyToOne\" />
+    <None Remove="ManyToMany\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OneToOne\" />
+    <Folder Include="ManyToOne\" />
+    <Folder Include="ManyToMany\" />
+  </ItemGroup>
+</Project>

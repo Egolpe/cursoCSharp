@@ -1,0 +1,36 @@
+<h1>{{title}}</h1>
+
+
+
+<button mat-flat-button color="primary" (click)="onClick()">Primary</button>
+
+<table mat-table [dataSource]="books" class="mat-elevation-z8">
+
+  
+  <ng-container matColumnDef="Identificador">
+    <th mat-header-cell *matHeaderCellDef> Identificador </th>
+    <td mat-cell *matCellDef="let book"> {{book.id}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="Título">
+    <th mat-header-cell *matHeaderCellDef> Título</th>
+    <td mat-cell *matCellDef="let book"> {{book.title}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Autor">
+    <th mat-header-cell *matHeaderCellDef> Autor </th>
+    <td mat-cell *matCellDef="let book"> {{book.author}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Precio">
+    <th mat-header-cell *matHeaderCellDef> Precio (€)</th>
+    <td mat-cell *matCellDef="let book"> {{book.price}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnNames;"></tr>
+</table>
+

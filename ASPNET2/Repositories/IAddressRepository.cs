@@ -1,14 +1,17 @@
 ﻿
 namespace ASPNET2.Repositories;
 
-public interface ICategoryRepository
+public interface IAddressRepository
 {
     
-    Category FindById(int id);
+    Address FindById(int id);
 
-    List<Category> FindAll();
-    Category Create(Category category);
-    
+    List<Address> FindAll();
+
+    Address Create(Address address);
+
+    Address Update(Address address);
+
     bool RemoveById(int id);
 }
 

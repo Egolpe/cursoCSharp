@@ -13,6 +13,7 @@ public class BookController
         BookRepo = bookRepository;
     }
 
+    //metodos
 
     //FindAll
     [HttpGet] //GET api/books
@@ -34,7 +35,7 @@ public class BookController
     }
 
     [HttpGet("title/{title}")]
-    public List<Book> FindByTitleContains(string title)
+    public List<Book>? FindByTitleContains(string title)
     {
         return BookRepo.FindByTitleContains(title);
     }

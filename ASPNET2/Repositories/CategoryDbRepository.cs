@@ -56,5 +56,11 @@ public class CategoryDbRepository : ICategoryRepository
         Context.SaveChanges();
         return true;
     }
+
+    public List<Category> FindByMinAge(int age)
+    {
+        return Context.Categories.Where(c => c.MinAge >= age).ToList();
+    }
+
 }
 
