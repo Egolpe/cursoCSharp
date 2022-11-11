@@ -8,10 +8,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BookListComponent
+    BookListComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
