@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
+    MatCardModule,
+    MatDividerModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'book-list', pathMatch: 'full'},
       {path: 'book-list', component: BookListComponent },
