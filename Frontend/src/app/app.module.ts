@@ -12,6 +12,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatCardModule,
     MatDividerModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'book-list', pathMatch: 'full'},
       {path: 'book-list', component: BookListComponent },
