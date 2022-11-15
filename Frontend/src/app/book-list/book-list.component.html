@@ -39,6 +39,11 @@
           Ver
         <mat-icon>visibility</mat-icon>
       </button>
+
+      <button mat-icon-button color="primary" [routerLink]="['/books',book.id,'edit']">
+        Editar
+      <mat-icon>visibility</mat-icon>
+    </button>
         <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
           Borrar
         <mat-icon>delete_forever</mat-icon>

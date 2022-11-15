@@ -21,6 +21,11 @@ export class BookService {
   findByIdWithInclude(id: number){
     return this.http.get<Book>(`${this.url}/include/${id}`)
   }
+
+
+  create(book: Book){
+    return this.http.post<Book>(this.url, book);
+  }
   //Borrar por id
   deleteById(id: number) {
     return this.http.delete(`${this.url}/${id}`);

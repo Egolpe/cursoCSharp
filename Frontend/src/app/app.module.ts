@@ -13,11 +13,15 @@ import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { BookFormComponent } from './book-form/book-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'; 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,
@@ -28,11 +32,16 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatCardModule,
     MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'books', pathMatch: 'full'},
       {path: 'books', component: BookListComponent },
       {path: 'books/:id/detail', component: BookDetailComponent },
+      {path: 'books/new', component: BookFormComponent },
+      {path: 'books/:id/edit', component: BookFormComponent },
+
     ])
   ],
   providers: [],

@@ -20,8 +20,8 @@ public class Book
     MaxLength(50, ErrorMessage = "El isbn debe tener máximo 50 caracteres")]
     public string Isbn { get; set; }
 
-    [Required,
-    Column("release_year")]
+    
+    [Column("release_year")]
     public int ReleaseYear { get; set; }
 
     [Column("description")]
