@@ -7,7 +7,7 @@ import { Author } from '../models/author.model';
   providedIn: 'root'
 })
 export class AuthorService {
-  url = 'http://localhost:7219/api/Authors';
+  url = 'http://localhost:7219/api/authors';
   constructor(private http:HttpClient) { }
 
   findAll() {

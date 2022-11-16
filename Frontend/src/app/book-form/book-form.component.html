@@ -40,3 +40,10 @@
       </mat-select>
     </mat-form-field>
   </form>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Toppings</mat-label>
+    <mat-select formControlName="categories" multiple>
+      <mat-option *ngFor="let category of categories" [value]="category">{{category.name}} ({{Category.minAge}})</mat-option>
+    </mat-select>
+  </mat-form-field>

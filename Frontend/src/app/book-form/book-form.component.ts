@@ -3,8 +3,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Author } from '../models/author.model';
 import { Book } from '../models/book.model';
+import { Category } from '../models/category.model';
 import { AuthorService } from '../services/author.service';
 import { BookService } from '../services/book.service';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-book-form',
@@ -16,10 +18,12 @@ export class BookFormComponent implements OnInit {
   editForm = this.createFormGroup();
   error: boolean = false;
   authors: Author[] = [];
+  categories: Category[] = [];
   
   constructor(
     private bookService: BookService,
-    private authorService: AuthorService, 
+    private authorService: AuthorService,
+    private categoryService: CategoryService, 
     private router: Router, 
     private activatedRoute: ActivatedRoute
   ) { }
@@ -43,6 +47,7 @@ export class BookFormComponent implements OnInit {
                    isbn: bookFromBackend.isbn,
                    description: bookFromBackend.description,
                    authorId: bookFromBackend.authorId,
+                   categories: bookFromBackend.categories,
                 })
               },
               error: err => console.log(err)
@@ -61,7 +66,10 @@ export class BookFormComponent implements OnInit {
         error: err => console.log(err)
       });
 
-
+      this.categoryService.findAll().subscribe({
+        next: categories => this.categories = categories,
+        error: err => console.log(err),
+      })
   }
   
   
@@ -76,6 +84,7 @@ export class BookFormComponent implements OnInit {
       price: new FormControl(),
       description: new FormControl(),
       authorId: new FormControl(),
+      categories: new FormControl(),
     })
   }
   save() {
@@ -87,6 +96,7 @@ export class BookFormComponent implements OnInit {
     releaseYear: this.editForm.get("releaseYear")?.value,
     price: this.editForm.get("price")?.value,
     authorId: this.editForm.get("authorId")?.value,
+    categories: this.editForm.get("categories")?.value,
     }as any;
 
 
