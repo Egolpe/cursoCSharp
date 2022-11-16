@@ -80,6 +80,9 @@ public class BookDbRepository : IBookRepository
         Context.Books.Attach(book);
 
         Context.Entry(book).Property(b => b.Title).IsModified = true;
+        Context.Entry(book).Property(b => b.Isbn).IsModified = true;
+        Context.Entry(book).Property(b => b.ReleaseYear).IsModified = true;
+        Context.Entry(book).Property(b => b.Description).IsModified = true;
         Context.Entry(book).Property(b => b.AuthorId).IsModified = true;
         Context.Entry(book).Collection(b => b.Categories).IsModified = true;
 

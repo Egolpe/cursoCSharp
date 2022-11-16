@@ -10,7 +10,7 @@ export class BookListComponent implements OnInit {
 
   books: Book[] = [];
   
-  columnNames: string[] = ['id', 'isbn', 'title', 'releaseYear', 'author', 'Acciones']; 
+  columnNames: string[] = ['id', 'isbn', 'title', 'releaseYear', 'author', 'Acciones', 'description']; 
   constructor(private service: BookService) { }
 
   ngOnInit(): void {

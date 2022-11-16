@@ -30,4 +30,8 @@ export class BookService {
   deleteById(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
+
+  update(book: Book){
+    return this.http.put<Book>(this.url, book);
+  }
 }
