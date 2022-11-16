@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookFormComponent } from './book-form/book-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'; 
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', redirectTo: 'books', pathMatch: 'full'},

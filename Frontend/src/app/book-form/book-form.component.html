@@ -30,4 +30,13 @@
       <mat-label>Descripción</mat-label>
       <textarea ></textarea>
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Selector de autor</mat-label>
+      <mat-select formControlName="authorId">
+        <mat-option *ngFor="let author of authors" [value]="author.id">
+          {{author.fullName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </form>
